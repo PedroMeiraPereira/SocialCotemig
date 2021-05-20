@@ -13,7 +13,6 @@ import br.com.cotemig.socialcotemig.R
 import br.com.cotemig.socialcotemig.models.Post
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.bumptech.glide.Glide
 
 class FeedAdapter (var context: Context, var list: List<Post>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -50,7 +49,6 @@ class FeedAdapter (var context: Context, var list: List<Post>) : RecyclerView.Ad
             avatar.load(post.avatar){
                 transformations(RoundedCornersTransformation(50f))
             }
-            //Glide.with(context).load(post.avatar).into(avatar)
 
             var gallery = view.findViewById<RecyclerView>(R.id.gallery)
             gallery.adapter = GalleryAdapter(context, post.gallery)
@@ -60,6 +58,9 @@ class FeedAdapter (var context: Context, var list: List<Post>) : RecyclerView.Ad
 
             var snapHelper = PagerSnapHelper()
             snapHelper.attachToRecyclerView(gallery)
+
+            var likes = view.findViewById<TextView>(R.id.likes)
+            likes.text = post.likes.size.toString()
 
         }
 

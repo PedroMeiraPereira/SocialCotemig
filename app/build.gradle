@@ -48,9 +48,6 @@ dependencies {
     // biblioteca para conversão de JSON para Classe e Classe para JSON
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-    // biblioteca para download de imagens e cache de imagens
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
-
     // adicionando Coil para download de imagens no ImageView
     implementation 'io.coil-kt:coil:1.2.1'
 

@@ -14,4 +14,8 @@ class RetrofitInitializer {
         return retrofit.create(ServiceFeed::class.java)
     }
 
+    fun serviceStories() : ServiceStories{
+        return retrofit.create(ServiceStories::class.java)
+    }
+
 }
